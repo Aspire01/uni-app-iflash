@@ -8415,7 +8415,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "iflash", "usingComponents": {} }, "pages/user/user": { "navigationBarTitleText": "我的", "usingComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/tabbar/index/index": { "navigationStyle": "default", "navigationBarTitleText": "首页", "usingComponents": {} }, "pages/tabbar/user/user": { "navigationStyle": "default", "navigationBarTitleText": "个人中心", "usingComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
@@ -8538,6 +8538,75 @@ function normalizeComponent (
   }
 }
 
+
+/***/ }),
+/* 15 */
+/*!**************************************************************!*\
+  !*** E:/workspace-hbuilderx/uni-app-iflash/common/config.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.func = void 0;var func = function func() {
+  return 'http://laiwojia.10yuih.cn';
+};exports.func = func;
+
+/***/ }),
+/* 16 */
+/*!************************************************************!*\
+  !*** E:/workspace-hbuilderx/uni-app-iflash/common/http.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _config = __webpack_require__(/*! ./config.js */ 15);
+
+
+var http = function http(argus) {
+  return new Promise(function (resolve, reject) {
+    uni.request({
+      method: argus.method || 'post',
+      url: "".concat((0, _config.func)()).concat(argus.url),
+      data: argus.data,
+      header: {
+        // 'token': 'f5c6/3H2DlOCW8QtljhPJnGguanII2cLGRNaYfnk' //自定义请求头信息
+      },
+      success: function success(res) {
+        // console.log(res)
+        res = res.data;
+        if (res.code == 0) {
+          resolve(res);
+        } else {
+          uni.showToast({
+            title: res.message,
+            icon: 'none',
+            duration: 1500 });
+
+        }
+      },
+      fail: function fail(err) {
+        var data = err.data;
+        reject(data);
+        var code = data.code;
+        switch (code) {
+          case 1:
+            // do sth
+            break;}
+
+      },
+      complete: function complete() {
+        setTimeout(function () {
+          uni.hideLoading();
+        }, 300);
+      } });
+
+  });
+};var _default =
+
+http;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })
 ]]);

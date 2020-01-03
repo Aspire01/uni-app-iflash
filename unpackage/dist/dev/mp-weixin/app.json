@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/user/user"
+    "pages/tabbar/index/index",
+    "pages/tabbar/user/user"
   ],
   "subPackages": [],
   "window": {
@@ -21,13 +21,13 @@
     "spacing": "3px",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/tabbar/index/index",
         "iconPath": "static/tabbar/home.png",
         "selectedIconPath": "static/tabbar/home-active.png",
         "text": "首页"
       },
       {
-        "pagePath": "pages/user/user",
+        "pagePath": "pages/tabbar/user/user",
         "iconPath": "static/tabbar/user.png",
         "selectedIconPath": "static/tabbar/user-active.png",
         "text": "我的"
