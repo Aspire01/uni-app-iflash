@@ -8,6 +8,7 @@ const http = (argus) => {
 			url: `${func()}${argus.url}`,
 			data: argus.data,
 			header: {
+				'Content-Type': 'application/x-www-form-urlencoded'
 				// 'token': 'f5c6/3H2DlOCW8QtljhPJnGguanII2cLGRNaYfnk' //自定义请求头信息
 			},
 			success: (res) => {

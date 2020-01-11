@@ -14,6 +14,70 @@
 
 /* 颜色变量 */
 
+/* custome-style begins */
+
+/* flex layout */
+@mixin f-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin f-between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@mixin f-around {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+@mixin f-center-V {
+	display: flex;
+	align-items: center;
+}
+
+@mixin f-direction($direction) {
+	flex-direction: $direction;
+}
+/* flex layout ends*/
+
+// 正方形
+@mixin square($side) {
+	width: $side;
+	height: $side;
+}
+
+// 带圆角的正方形
+@mixin square-radius($side,$radius) {
+	width: $side;
+	height: $side;
+	border-radius: $radius;
+}
+
+// 带圆角的长方形
+@mixin rectangle-radius($w,$h,$radius) {
+	width: $w;
+	height: $h;
+	border-radius: $radius;
+}
+
+/* 类似提交按钮 */
+@mixin submit-btn($h:88rpx,$w:580rpx,$bg:linear-gradient(90deg,rgba(253,185,0,1),rgba(254,108,0,1))) {
+	width: $w;
+	height: $h;
+	line-height: $h;
+	border-radius: $h/2;
+	text-align: center;
+	background: $bg;
+	color: #fff;
+}
+
+/* custome-style ends */
+
 /* 行为相关颜色 */
 $uni-color-primary: #007aff;
 $uni-color-success: #4cd964;
